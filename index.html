@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Édusafe Academy - Excellence & Innovation Éducative</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+  <!-- En-tête Navigation -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-11 h-11 bg-indigo-600 text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-md shadow-indigo-200">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div>
+          <span class="text-xl font-extrabold text-slate-900 tracking-tight block leading-none">Édusafe</span>
+          <span class="text-xs text-indigo-600 font-semibold tracking-wider uppercase">Academy</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
+        <a href="#accueil" class="hover:text-indigo-600 transition-colors">Accueil</a>
+        <a href="#a-propos" class="hover:text-indigo-600 transition-colors">À propos</a>
+        <a href="#programmes" class="hover:text-indigo-600 transition-colors">Programmes</a>
+        <a href="#equipe" class="hover:text-indigo-600 transition-colors">Équipe</a>
+        <a href="#actualites" class="hover:text-indigo-600 transition-colors">Actualités</a>
+        <a href="#inscription" class="hover:text-indigo-600 transition-colors">Pré-inscription</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#inscription" class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-white bg-indigo-600 rounded-lg shadow-sm hover:bg-indigo-700 transition-all">
+          Candidater
+        </a>
+        <a href="admin.html" class="inline-flex items-center gap-2 px-3.5 py-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors">
+          <i class="fa-solid fa-lock text-xs text-indigo-600"></i> Espace Admin
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="accueil" class="relative bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#6366f1_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-6">
+          <i class="fa-solid fa-star text-amber-400"></i> Inscriptions Ouvertes 2025-2026
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white mb-6">
+          Formons les esprits de <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">demain</span>.
+        </h1>
+        <p class="text-slate-300 text-lg mb-8 max-w-xl font-light leading-relaxed">
+          Édusafe Academy offre un enseignement moderne, un encadrement rigoureux et des outils numériques de pointe pour garantir la réussite académique et épanouissante de chaque élève.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#inscription" class="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl shadow-lg shadow-indigo-600/30 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-pen-nib"></i> Inscrire un élève
+          </a>
+          <a href="#programmes" class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/10 backdrop-blur-sm transition-all">
+            Découvrir les classes
+          </a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="bg-gradient-to-tr from-indigo-500 to-cyan-500 rounded-3xl p-2 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80" alt="Étudiants" class="rounded-2xl object-cover h-96 w-full">
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-white text-slate-900 p-5 rounded-2xl shadow-xl hidden sm:flex items-center gap-4 border border-slate-100">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xl">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div>
+            <p class="font-extrabold text-2xl text-slate-900">98%</p>
+            <p class="text-xs font-medium text-slate-500">Taux de réussite aux examens</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- À Propos -->
+  <section id="a-propos" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-600 mb-2">Notre Mission</h2>
+        <p class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Un environnement propice à l'excellence académique</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center text-xl mb-6 font-bold">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Pédagogie Moderne</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Programme combinant les compétences fondamentales avec l'initiation aux technologies et au numérique dès le plus jeune âge.</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl mb-6 font-bold">
+            <i class="fa-solid fa-user-shield"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Suivi Personnalisé</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Des classes à effectif réduit assurant une attention individuelle et un accompagnement sur mesure pour chaque élève.</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl mb-6 font-bold">
+            <i class="fa-solid fa-flask"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Infrastructures de pointe</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Laboratoires scientifiques, salles d'informatique modernes, bibliothèque multimédia et terrains de sport.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Classes & Programmes -->
+  <section id="programmes" class="py-20 bg-slate-100/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-600 mb-2">Niveaux Scolaires</h2>
+          <p class="text-3xl font-extrabold text-slate-900">Nos Cycles d'Enseignement</p>
+        </div>
+      </div>
+      <div id="classes-list" class="grid md:grid-cols-3 gap-8">
+        <!-- Dynamique ou secours -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 flex flex-col justify-between">
+          <div>
+            <span class="px-3 py-1 bg-indigo-50 text-indigo-600 font-semibold rounded-full text-xs">Primaire</span>
+            <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-2">Cycle Éléments (CP - CM2)</h3>
+            <p class="text-slate-600 text-sm mb-6">Fondations solides en lecture, écriture, calcul et découverte du monde.</p>
+          </div>
+          <div class="border-t border-slate-100 pt-4 flex justify-between items-center text-xs font-medium text-slate-500">
+            <span><i class="fa-solid fa-users mr-1"></i> 20 élèves / classe</span>
+            <span class="text-indigo-600 font-bold">Voir détails</span>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 flex flex-col justify-between">
+          <div>
+            <span class="px-3 py-1 bg-cyan-50 text-cyan-600 font-semibold rounded-full text-xs">Collège</span>
+            <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-2">Cycle Collège (6ème - 3ème)</h3>
+            <p class="text-slate-600 text-sm mb-6">Approfondissement disciplinaire, développement de l'autonomie et préparation au Brevet.</p>
+          </div>
+          <div class="border-t border-slate-100 pt-4 flex justify-between items-center text-xs font-medium text-slate-500">
+            <span><i class="fa-solid fa-users mr-1"></i> 24 élèves / classe</span>
+            <span class="text-indigo-600 font-bold">Voir détails</span>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 flex flex-col justify-between">
+          <div>
+            <span class="px-3 py-1 bg-emerald-50 text-emerald-600 font-semibold rounded-full text-xs">Lycée</span>
+            <h3 class="text-2xl font-bold text-slate-900 mt-4 mb-2">Cycle Lycée (2nde - Tle)</h3>
+            <p class="text-slate-600 text-sm mb-6">Filières d'excellence Générale et Technologique pour préparer aux grandes écoles.</p>
+          </div>
+          <div class="border-t border-slate-100 pt-4 flex justify-between items-center text-xs font-medium text-slate-500">
+            <span><i class="fa-solid fa-users mr-1"></i> 25 élèves / classe</span>
+            <span class="text-indigo-600 font-bold">Voir détails</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Actualités -->
+  <section id="actualites" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-600 mb-2">Vie de l'école</h2>
+        <p class="text-3xl font-extrabold text-slate-900">Actualités & Événements</p>
+      </div>
+      <div id="news-container" class="grid md:grid-cols-3 gap-8">
+        <article class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Rentrée" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <span class="text-xs text-indigo-600 font-bold uppercase">Rentrée Scolaire</span>
+            <h3 class="text-lg font-bold text-slate-900 mt-2 mb-2">Journée d'accueil des nouveaux candidats</h3>
+            <p class="text-slate-600 text-sm mb-4">Venez visiter nos campus et rencontrer l'équipe enseignante lors de notre journée portes ouvertes.</p>
+            <span class="text-xs text-slate-400 font-medium">12 Septembre 2025</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulaire de Pré-inscription -->
+  <section id="inscription" class="py-20 bg-slate-900 text-white relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-slate-800 border border-slate-700 rounded-3xl p-8 sm:p-12 shadow-2xl">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <h2 class="text-3xl font-black text-white mb-3">Pré-inscription en Ligne</h2>
+          <p class="text-slate-400 text-sm">Remplissez le formulaire ci-dessous. Notre équipe d'admission examinera votre dossier sous 48 heures.</p>
+        </div>
+
+        <form id="registration-form" class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Nom complet de l'élève *</label>
+              <input type="text" id="reg-student-name" required placeholder="Ex: Jean Dupont" class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Niveau Souhaité *</label>
+              <select id="reg-level" required class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white focus:outline-none focus:border-indigo-500 text-sm">
+                <option value="">Sélectionnez un niveau</option>
+                <option value="Primaire (CP-CM2)">Primaire (CP-CM2)</option>
+                <option value="Collège (6ème-3ème)">Collège (6ème-3ème)</option>
+                <option value="Lycée (2nde-Tle)">Lycée (2nde-Tle)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Nom du Parent / Tuteur *</label>
+              <input type="text" id="reg-parent-name" required placeholder="Ex: Marie Dupont" class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Téléphone / WhatsApp *</label>
+              <input type="tel" id="reg-phone" required placeholder="Ex: +221 77 123 45 67" class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 text-sm">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Adresse Email de contact *</label>
+            <input type="email" id="reg-email" required placeholder="parent@exemple.com" class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 text-sm">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Remarques particulières (optionnel)</label>
+            <textarea id="reg-notes" rows="3" placeholder="Informations médicales, antécédents..." class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 text-sm"></textarea>
+          </div>
+
+          <div id="reg-alert" class="hidden p-4 rounded-xl text-sm font-semibold"></div>
+
+          <button type="submit" id="reg-submit-btn" class="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2 text-base">
+            <i class="fa-solid fa-paper-plane"></i> Envoyer ma candidature
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 bg-indigo-600 text-white rounded-lg flex items-center justify-center font-bold text-sm">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <span class="text-lg font-bold text-white">Édusafe Academy</span>
+        </div>
+        <p class="text-xs leading-relaxed text-slate-400">Institution scolaire dédiée à l'excellence académique, l'épanouissement personnel et la réussite de tous nos apprenants.</p>
+      </div>
+      <div>
+        <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-3">Contact rapide</h4>
+        <p class="text-xs mb-2"><i class="fa-solid fa-location-dot text-indigo-400 mr-2"></i> Dakar, Sénégal - Avenue Cheikh Anta Diop</p>
+        <p class="text-xs mb-2"><i class="fa-solid fa-phone text-indigo-400 mr-2"></i> +221 33 800 00 00</p>
+        <p class="text-xs"><i class="fa-solid fa-envelope text-indigo-400 mr-2"></i> contact@edusafe-academy.com</p>
+      </div>
+      <div>
+        <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-3">Horaires d'accueil</h4>
+        <p class="text-xs mb-1">Lundi - Vendredi : 07h30 - 17h00</p>
+        <p class="text-xs">Samedi : 08h00 - 12h00</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-900 text-center text-xs text-slate-500">
+      &copy; 2025 Édusafe Academy. Tous droits réservés.
+    </div>
+  </footer>
+
+  <!-- BADGE DEVWEBIA OBLIGATOIRE -->
+  <a href="#" target="_blank" class="fixed bottom-4 right-4 z-50 bg-slate-900/90 text-white border border-indigo-500/40 px-3 py-1.5 rounded-full text-xs font-semibold shadow-xl backdrop-blur-md flex items-center gap-2 hover:scale-105 transition-transform">
+    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> ✨ Fait avec DEVWEBIA
+  </a>
+
+  <script src="firebase.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
